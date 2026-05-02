@@ -20,6 +20,18 @@
 	@apply border-2 border-black;
 }
 
+@utility custom-scrollbar {
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+	&::-webkit-scrollbar-track {
+		@apply bg-black;
+	}
+	&::-webkit-scrollbar-thumb {
+		@apply border border-black bg-portal;
+	}
+}
+
 @utility no-scrollbar {
 	scrollbar-width: none;
 	&::-webkit-scrollbar {

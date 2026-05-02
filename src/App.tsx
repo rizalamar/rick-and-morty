@@ -5,6 +5,7 @@ import CharacterPage from "./components/pages/CharacterPage";
 import Footer from "./sections/Footer";
 import LocationPage from "./components/pages/LocationPage";
 import EpisodePage from "./components/pages/EpisodePage";
+import CharacterDetailPage from "./components/pages/CharacterDetailPage";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/characters" element={<CharacterPage />} />
+					<Route path="/characters/:id" element={<CharacterDetailPage />} />
 					<Route path="/locations" element={<LocationPage />} />
 					<Route path="/episodes" element={<EpisodePage />} />
 				</Routes>

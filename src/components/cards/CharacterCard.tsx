@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import type { Characters } from "../../@types/characters.types";
 
 type CharacterProps = {
@@ -5,8 +6,12 @@ type CharacterProps = {
 };
 
 export default function CharacterCard({ character }: CharacterProps) {
+	const navigate = useNavigate();
 	return (
-		<div className="overflow-hidden transition-all bg-white shadow-brutal-lg border-brutal hover:shadow-brutal hover:translate-x-1 hover:translate-y-1 group">
+		<div
+			className="overflow-hidden transition-all bg-white shadow-brutal-lg border-brutal active:shadow-none active:translate-x-1 active:translate-y-1 group cursor-pointer"
+			onClick={() => navigate(`/characters/${character.id}`)}
+		>
 			<div className="p-1 overflow-hidden border-b-2 border-black">
 				<img src={character.image} alt={character.name} className="w-full aspect-square" />
 			</div>
