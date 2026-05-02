@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap");
+
+@theme {
+	/* Menambahkan Warna Custom */
+	--color-baseBackground: #fafafa;
+	--color-portal: #97ce4c;
+	--color-rick: #00b0c8;
+	--color-morty: #f1e24a;
+
+	/* Menambahkan Shadow Custom */
+	--shadow-brutal: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+	--shadow-brutal-lg: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+
+	--animate-spin-slow: spin 3s linear infinite;
+	--animate-portal-pulse: portal-pulse 2s ease-in-out infinite;
+}
+
+@utility border-brutal {
+	@apply border-2 border-black;
+}
+
+@utility no-scrollbar {
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@keyframes portal-pulse {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 0.8;
+	}
+	50% {
+		transform: scale(1.1);
+		opacity: 1;
+		filter: brightness(1.2);
+	}
+}
