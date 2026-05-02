@@ -9,6 +9,11 @@ export const characterService = {
 	getById: async (id: number): Promise<Characters> => {
 		return api.get(`/character/${id}`);
 	},
+	getMultiple: async (ids: number[]): Promise<Characters[]> => {
+		if (ids.length === 0) return [];
+		const data = await api.get<Characters | Characters[], Characters | Characters[]>(`/character/${ids.join(",")}`);
+		return Array.isArray(data) ? data : [data];
+	},
 	filter: async (params: { name?: string; status?: string; page?: number }): Promise<CharacterResponse> => {
 		return api.get(`/character`, { params });
 	},
