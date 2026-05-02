@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { LocationCard } from "../components/cards/LocationCard";
 import Button from "../components/common/Button";
 import { Portal } from "../components/common/Portal";
 import { useLocations } from "../hooks/useLocations";
 
 export const LocationSection = () => {
+	const navigate = useNavigate();
 	const { data, loading, error } = useLocations(1);
 
 	const previewData = data?.results?.slice(0, 7);
@@ -17,7 +19,9 @@ export const LocationSection = () => {
 					<h2 className="text-2xl font-bold">Locations</h2>
 					<p className="text-sm text-gray-500">Explore different worlds in the multiverse</p>
 				</div>
-				<Button size="sm">See all locations →</Button>
+				<Button size="sm" onClick={() => navigate("/locations")}>
+					See all locations →
+				</Button>
 			</div>
 
 			{loading ? (

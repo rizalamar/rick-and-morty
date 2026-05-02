@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useLocations } from "../../hooks/useLocations";
-import { Portal } from "../common/Portal";
-import { LocationCard } from "../cards/LocationCard";
+import { useEpisodes } from "../../hooks/useEpisodes";
+import EpisodeCard from "../cards/EpisodeCard";
 import Button from "../common/Button";
+import { Portal } from "../common/Portal";
 
-export default function LocationPage() {
+export default function EpisodePage() {
 	const [page, setPage] = useState(1);
-	const { data, loading, error } = useLocations(page);
+	const { data, loading, error } = useEpisodes(page);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -27,7 +27,7 @@ export default function LocationPage() {
 				<div className="flex items-center gap-4">
 					<Button
 						size="sm"
-						variant="morty"
+						variant="rick"
 						onClick={() => setPage((p) => Math.max(1, p - 1))}
 						disabled={page === 1}
 					>
@@ -36,7 +36,7 @@ export default function LocationPage() {
 					<span className="font-black bg-white border-brutal px-4 py-1 shadow-brutal">
 						PAGE {page} OF {data?.info.pages}
 					</span>
-					<Button size="sm" variant="morty" onClick={() => setPage((p) => p + 1)} disabled={!data?.info.next}>
+					<Button size="sm" variant="rick" onClick={() => setPage((p) => p + 1)} disabled={!data?.info.next}>
 						Next
 					</Button>
 				</div>
@@ -46,9 +46,9 @@ export default function LocationPage() {
 				<Portal />
 			) : (
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{data?.results.map((loc) => (
-						<div key={loc.id} className="h-full">
-							<LocationCard location={loc} />
+					{data?.results.map((ep) => (
+						<div key={ep.id} className="h-full">
+							<EpisodeCard episode={ep} />
 						</div>
 					))}
 				</div>

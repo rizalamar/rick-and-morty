@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import EpisodeCard from "../components/cards/EpisodeCard";
 import Button from "../components/common/Button";
 import { Portal } from "../components/common/Portal";
 import { useEpisodes } from "../hooks/useEpisodes";
 
 export default function EpisodeSection() {
+	const navigate = useNavigate();
 	const { data, loading, error } = useEpisodes(1);
 
 	const previewData = data?.results?.slice(0, 6);
@@ -17,7 +19,9 @@ export default function EpisodeSection() {
 					<h2 className="text-2xl font-black">Season Logs</h2>
 					<p className="text-sm text-gray-500">Episodes</p>
 				</div>
-				<Button size="sm">Full Archive →</Button>
+				<Button size="sm" onClick={() => navigate("/episodes")}>
+					Full Archive →
+				</Button>
 			</div>
 
 			{loading ? (
