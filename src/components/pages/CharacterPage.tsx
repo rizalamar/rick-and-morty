@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCharacters } from "../../hooks/useCharacters";
 import Button from "../common/Button";
 import { Portal } from "../common/Portal";
@@ -8,6 +8,10 @@ export default function CharacterPage() {
 	const [page, setPage] = useState(1);
 	const { data, loading, error } = useCharacters(page);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	if (error) return <div className="pt-32 text-center text-red-500 font-black">ERROR: {error}</div>;
 
 	return (
@@ -16,11 +20,23 @@ export default function CharacterPage() {
 				<h2 className="text-4xl font-black uppercase border-b-4 border-portal">All Characters</h2>
 
 				<div className="flex items-center gap-4">
-					<Button size="sm" onClick={() => setPage((p) => Math.max(1, p - 1))} disabled={page === 1}>
+					<Button
+						size="sm"
+						variant="portal"
+						onClick={() => setPage((p) => Math.max(1, p - 1))}
+						disabled={page === 1}
+					>
 						Prev
 					</Button>
-					<span className="font-black bg-white border-brutal px-4 py-1 shadow-brutal">PAGE OF {page}</span>
-					<Button size="sm" onClick={() => setPage((p) => p + 1)} disabled={!data?.info.next}>
+					<span className="font-black bg-white border-brutal px-4 py-1 shadow-brutal">
+						PAGE {page} OF {data?.info.pages}
+					</span>
+					<Button
+						size="sm"
+						variant="portal"
+						onClick={() => setPage((p) => p + 1)}
+						disabled={!data?.info.next}
+					>
 						Next
 					</Button>
 				</div>

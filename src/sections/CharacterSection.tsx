@@ -3,17 +3,12 @@ import CharacterCard from "../components/cards/CharacterCard";
 import Button from "../components/common/Button";
 import { Portal } from "../components/common/Portal";
 import { useCharacters } from "../hooks/useCharacters";
-import { useEffect } from "react";
 
 export const CharacterSection = () => {
 	const navigate = useNavigate();
 	const { data, loading } = useCharacters(1);
 
 	const previewData = data?.results?.slice(0, 5);
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
 
 	return (
 		<section className="py-10">
