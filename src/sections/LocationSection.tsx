@@ -1,11 +1,12 @@
 import { LocationCard } from "../components/cards/LocationCard";
+import Button from "../components/common/Button";
 import { Portal } from "../components/common/Portal";
 import { useLocations } from "../hooks/useLocations";
 
 export const LocationSection = () => {
 	const { data, loading, error } = useLocations(1);
 
-	const previewData = data?.results.slice(0, 7);
+	const previewData = data?.results?.slice(0, 7);
 
 	if (error) return null;
 
@@ -16,9 +17,7 @@ export const LocationSection = () => {
 					<h2 className="text-2xl font-bold">Locations</h2>
 					<p className="text-sm text-gray-500">Explore different worlds in the multiverse</p>
 				</div>
-				<button className="px-4 py-2 text-xs font-black uppercase transition-all bg-white border-brutal shadow-brutal active:translate-x-1 active:translate-y-1 active:shadow-none">
-					See all locations →
-				</button>
+				<Button size="sm">See all locations →</Button>
 			</div>
 
 			{loading ? (

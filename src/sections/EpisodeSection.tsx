@@ -1,11 +1,12 @@
 import EpisodeCard from "../components/cards/EpisodeCard";
+import Button from "../components/common/Button";
 import { Portal } from "../components/common/Portal";
 import { useEpisodes } from "../hooks/useEpisodes";
 
 export default function EpisodeSection() {
 	const { data, loading, error } = useEpisodes(1);
 
-	const previewData = data?.results.slice(0, 6);
+	const previewData = data?.results?.slice(0, 6);
 
 	if (error) return null;
 
@@ -16,9 +17,7 @@ export default function EpisodeSection() {
 					<h2 className="text-2xl font-black">Season Logs</h2>
 					<p className="text-sm text-gray-500">Episodes</p>
 				</div>
-				<button className="px-4 py-2 text-xs font-black uppercase transition-all bg-white border-brutal shadow-brutal active:translate-x-1 active:translate-y-1 active:shadow-none">
-					Full Archive →
-				</button>
+				<Button size="sm">Full Archive →</Button>
 			</div>
 
 			{loading ? (

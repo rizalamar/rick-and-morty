@@ -1,3 +1,5 @@
+import Button from "../components/common/Button";
+
 export const Hero = () => {
 	return (
 		<section className="px-6 pb-16 overflow-hidden pt-28">
@@ -18,12 +20,12 @@ export const Hero = () => {
 						</div>
 
 						<div className="flex flex-wrap justify-center gap-4 mt-10">
-							<button className="px-8 py-3 text-xl font-black uppercase transition-all cursor-pointer border-brutal bg-portal shadow-brutal active:translate-x-1 active:translate-y-1 active:shadow-none">
+							<Button variant="portal" size="xl">
 								Get Started
-							</button>
-							<button className="px-8 py-3 text-xl font-black uppercase transition-all cursor-pointer border-brutal bg-morty shadow-brutal active:translate-x-1 active:translate-y-1 active:shadow-none">
+							</Button>
+							<Button variant="morty" size="xl">
 								Randomize
-							</button>
+							</Button>
 						</div>
 					</div>
 

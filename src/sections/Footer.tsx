@@ -1,3 +1,5 @@
+import Button from "../components/common/Button";
+
 export default function Footer() {
 	return (
 		<footer className="mt-20 bg-white border-t-4 border-black">
@@ -53,12 +55,9 @@ export default function Footer() {
 					<div className="flex flex-col gap-6">
 						<h3 className="text-xl font-black uppercase">Built by human</h3>
 						<div className="flex gap-4">
-							<a
-								href="#"
-								className="px-2 py-0.5 bg-white border-brutal shadow-brutal active:translate-x-1 active:translate-y-1 active:shadow-none transition-all"
-							>
+							<Button size="sm">
 								<span className="text-xs font-black uppercase">Portfolio</span>
-							</a>
+							</Button>
 						</div>
 
 						<p className="text-[10px] font-black uppercase opacity-50">
