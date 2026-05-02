@@ -1,18 +1,27 @@
+import { useNavigate } from "react-router-dom";
 import CharacterCard from "../components/cards/CharacterCard";
 import Button from "../components/common/Button";
 import { Portal } from "../components/common/Portal";
 import { useCharacters } from "../hooks/useCharacters";
+import { useEffect } from "react";
 
 export const CharacterSection = () => {
+	const navigate = useNavigate();
 	const { data, loading } = useCharacters(1);
 
 	const previewData = data?.results?.slice(0, 5);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	return (
 		<section className="py-10">
 			<div className="flex items-center justify-between mb-6">
 				<h2 className="text-2xl font-bold">Characters</h2>
-				<Button size="sm">See all characters →</Button>
+				<Button size="sm" onClick={() => navigate("/characters")}>
+					See all characters →
+				</Button>
 			</div>
 
 			{loading ? (
