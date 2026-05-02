@@ -44,21 +44,39 @@ export default function CharacterDetailPage() {
 					</div>
 
 					<div className={`border-brutal p-6 shadow-brutal bg-white`}>
-						<h1 className="text-4xl font-black leading-none uppercase">{data?.name}</h1>
+						<div className="space-y-0.5">
+							<p className="pl-1 text-[10px] uppercase tracking-wider text-gray-500 font-bold">name</p>
+							<h1 className="text-4xl font-black leading-none uppercase">{data?.name}</h1>
+						</div>
 						<div className="flex flex-wrap gap-2 mt-4">
-							<span
-								className={`border-brutal px-2 py-1 text-xs font-black uppercase ${
-									data?.status.toLocaleLowerCase() === "alive" ? "bg-portal" : "bg-red-400"
-								}`}
-							>
-								{data.status}
-							</span>
-							<span className="px-2 py-1 text-xs font-black uppercase border-brutal bg-rick">
-								{data.species}
-							</span>
-							<span className="px-2 py-1 text-xs font-black uppercase border-brutal bg-morty">
-								{data.gender}
-							</span>
+							<div className="space-y-0.5">
+								<p className="pl-1 text-[10px] uppercase tracking-wider text-gray-500 font-bold">
+									status
+								</p>
+								<span
+									className={`border-brutal px-2 py-1 text-xs font-black uppercase ${
+										data?.status.toLocaleLowerCase() === "alive" ? "bg-portal" : "bg-red-400"
+									}`}
+								>
+									{data.status}
+								</span>
+							</div>
+							<div className="space-y-0.5">
+								<p className="pl-1 text-[10px] uppercase tracking-wider text-gray-500 font-bold">
+									species
+								</p>
+								<span className="px-2 py-1 text-xs font-black uppercase border-brutal bg-rick">
+									{data.species}
+								</span>
+							</div>
+							<div className="space-y-0.5">
+								<p className="pl-1 text-[10px] uppercase tracking-wider text-gray-500 font-bold">
+									gender
+								</p>
+								<span className="px-2 py-1 text-xs font-black uppercase border-brutal bg-morty">
+									{data.gender}
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
