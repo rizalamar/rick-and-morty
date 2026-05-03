@@ -2,7 +2,7 @@ import Button from "../components/common/Button";
 
 export default function Footer() {
 	return (
-		<footer className="mt-20 bg-white border-t-4 border-black">
+		<footer className="mt-10 bg-white border-t-4 border-black">
 			<div className="container px-6 py-12 mx-auto">
 				<div className="grid grid-cols-1 gap-12 md:grid-cols-3">
 					{/* Quote */}

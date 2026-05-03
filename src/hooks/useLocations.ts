@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import type { LocationResponse } from "../@types";
 import { locationService } from "../service/locations.service";
+import type { FilterParams } from "../@types/filter.types";
 
-export const useLocations = (page: number) => {
+export const useLocations = (params: FilterParams = { page: 1 }) => {
 	const [data, setData] = useState<LocationResponse | null>(null);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [error, setError] = useState<string | null>(null);
@@ -11,7 +12,7 @@ export const useLocations = (page: number) => {
 		const fetchData = async () => {
 			try {
 				setLoading(true);
-				const response = await locationService.getAll(page);
+				const response = await locationService.filter(params);
 				setData(response);
 				setError(null);
 			} catch (error) {
@@ -21,7 +22,7 @@ export const useLocations = (page: number) => {
 			}
 		};
 		fetchData();
-	}, [page]);
+	}, [params.name, params.page, params.status]);
 
 	return { data, loading, error };
 };

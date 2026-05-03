@@ -6,7 +6,7 @@ import { useCharacters } from "../hooks/useCharacters";
 
 export const CharacterSection = () => {
 	const navigate = useNavigate();
-	const { data, loading } = useCharacters(1);
+	const { data, loading } = useCharacters({ page: 1 });
 
 	const previewData = data?.results?.slice(0, 5);
 

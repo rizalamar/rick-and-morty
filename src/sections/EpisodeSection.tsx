@@ -6,7 +6,8 @@ import { useEpisodes } from "../hooks/useEpisodes";
 
 export default function EpisodeSection() {
 	const navigate = useNavigate();
-	const { data, loading, error } = useEpisodes(1);
+
+	const { data, loading, error } = useEpisodes({ page: 1 });
 
 	const previewData = data?.results?.slice(0, 6);
 

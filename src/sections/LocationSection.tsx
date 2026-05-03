@@ -6,7 +6,7 @@ import { useLocations } from "../hooks/useLocations";
 
 export const LocationSection = () => {
 	const navigate = useNavigate();
-	const { data, loading, error } = useLocations(1);
+	const { data, loading, error } = useLocations({ page: 1 });
 
 	const previewData = data?.results?.slice(0, 7);
 
