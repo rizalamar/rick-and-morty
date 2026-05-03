@@ -20,6 +20,10 @@
 	@apply border-2 border-black;
 }
 
+@utility text-muted {
+	@apply font-black opacity-50;
+}
+
 @utility custom-scrollbar {
 	&::-webkit-scrollbar {
 		width: 6px;

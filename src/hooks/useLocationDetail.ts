@@ -21,7 +21,7 @@ export const useLocationDetail = (id: number | undefined) => {
 				const residentIds = locationRes.residents.map((url) => Number(url.split("/").pop()));
 
 				if (residentIds.length > 0) {
-					const charData = await characterService.getMultiple(residentIds.slice(0, 10));
+					const charData = await characterService.getMultiple(residentIds.slice(0, 20));
 					setResidents(charData);
 				}
 			} catch (error) {

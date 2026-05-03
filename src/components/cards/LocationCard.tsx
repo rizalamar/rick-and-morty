@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import type { Locations } from "../../@types/locations.types";
 
 type LocationProps = {
@@ -5,6 +6,7 @@ type LocationProps = {
 };
 
 export const LocationCard = ({ location }: LocationProps) => {
+	const navigate = useNavigate();
 	return (
 		<div className="flex flex-col justify-between p-5 transition-transform bg-white min-w-70 border-brutal shadow-brutal h-44">
 			<div>
@@ -26,6 +28,7 @@ export const LocationCard = ({ location }: LocationProps) => {
 				<button
 					className="border-brutal bg-rick px-3 py-1 text-[10px] font-black uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none
       active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+					onClick={() => navigate(`/locations/${location.id}`)}
 				>
 					Explore
 				</button>
