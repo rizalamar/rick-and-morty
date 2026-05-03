@@ -10,7 +10,7 @@ export default function EpisodeCard({ episode }: EpisodeProps) {
 
 	return (
 		<div
-			className="p-4 transition-transform bg-white min-w-70 border-brutal shadow-brutal"
+			className="p-4 transition-transform bg-white cursor-pointer active:translate-y-1 min-w-70 border-brutal shadow-brutal active:shadow-none active:translate-x-1"
 			onClick={() => navigate(`/episodes/${episode.id}`)}
 		>
 			<div className="bg-black text-portal p-2 font-mono text-[10px] mb-3 border-brutal shadow-[2px_2px_0px_0px_rgba(151,206,76,1)]">

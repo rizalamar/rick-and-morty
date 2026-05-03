@@ -2,7 +2,7 @@ import Button from "../components/common/Button";
 
 export const Hero = () => {
 	return (
-		<section className="px-6 pb-16 overflow-hidden pt-28">
+		<section className="px-6 pt-6 pb-16 overflow-hidden md:pt-20">
 			<div className="container mx-auto">
 				<div className="relative flex flex-col items-center p-8 overflow-hidden text-center border-brutal bg-rick md:p-16 shadow-brutal-lg">
 					{/* Aksen Dekorasi Khas Rick & Morty (Optional) */}
@@ -19,7 +19,7 @@ export const Hero = () => {
 							</p>
 						</div>
 
-						<div className="flex flex-wrap justify-center gap-4 mt-10">
+						<div className="flex flex-wrap justify-center gap-4 mt-10 md:my-10">
 							<Button variant="portal" size="xl">
 								Get Started
 							</Button>
@@ -30,7 +30,7 @@ export const Hero = () => {
 					</div>
 
 					{/* Label Kecil di pojok */}
-					<div className="absolute bottom-4 right-4 border-brutal bg-black text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest rotate-2">
+					<div className="absolute bottom-4 right-4 md:block border-brutal bg-black text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest rotate-2 hidden">
 						Dimension C-137 Approved
 					</div>
 				</div>
