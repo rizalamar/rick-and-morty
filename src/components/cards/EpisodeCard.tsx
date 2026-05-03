@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import type { Episodes } from "../../@types/episodes.types";
 
 type EpisodeProps = {
@@ -5,8 +6,13 @@ type EpisodeProps = {
 };
 
 export default function EpisodeCard({ episode }: EpisodeProps) {
+	const navigate = useNavigate();
+
 	return (
-		<div className="p-4 transition-transform bg-white min-w-70 border-brutal shadow-brutal">
+		<div
+			className="p-4 transition-transform bg-white min-w-70 border-brutal shadow-brutal"
+			onClick={() => navigate(`/episodes/${episode.id}`)}
+		>
 			<div className="bg-black text-portal p-2 font-mono text-[10px] mb-3 border-brutal shadow-[2px_2px_0px_0px_rgba(151,206,76,1)]">
 				{episode.episode}
 			</div>

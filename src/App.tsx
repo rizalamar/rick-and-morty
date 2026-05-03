@@ -7,6 +7,7 @@ import LocationPage from "./components/pages/LocationPage";
 import EpisodePage from "./components/pages/EpisodePage";
 import CharacterDetailPage from "./components/pages/CharacterDetailPage";
 import LocationDetailPage from "./components/pages/LocationDetailPage";
+import EpisodeDetailPage from "./components/pages/EpisodeDetailPage";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 					<Route path="/locations" element={<LocationPage />} />
 					<Route path="/locations/:id" element={<LocationDetailPage />} />
 					<Route path="/episodes" element={<EpisodePage />} />
+					<Route path="/episodes/:id" element={<EpisodeDetailPage />} />
 				</Routes>
 
 				<Footer />

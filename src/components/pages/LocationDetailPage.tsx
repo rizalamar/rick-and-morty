@@ -52,7 +52,7 @@ export default function LocationDetailPage() {
 			<div className="space-y-8">
 				<div className="flex items-center gap-4">
 					<h2 className="text-3xl font-black uppercase">Known Residents</h2>
-					<div className="h-1 bg-black grow"></div>
+					<div className="h-2 bg-black grow border-brutal"></div>
 				</div>
 
 				{residents.length > 0 ? (
