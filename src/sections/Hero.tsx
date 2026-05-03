@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../components/common/Button";
 
 export const Hero = () => {
+	const navigate = useNavigate();
+
+	const handleRandomize = () => {
+		const randomId = Math.floor(Math.random() * 826) + 1;
+		navigate(`/characters/${randomId}`);
+	};
+
 	return (
 		<section className="px-6 pt-6 pb-16 overflow-hidden md:pt-20">
 			<div className="container mx-auto">
@@ -20,10 +28,10 @@ export const Hero = () => {
 						</div>
 
 						<div className="flex flex-wrap justify-center gap-4 mt-10 md:my-10">
-							<Button variant="portal" size="xl">
+							<Button variant="portal" size="xl" onClick={() => navigate("/characters")}>
 								Get Started
 							</Button>
-							<Button variant="morty" size="xl">
+							<Button variant="morty" size="xl" onClick={handleRandomize}>
 								Randomize
 							</Button>
 						</div>
